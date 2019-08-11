@@ -4,7 +4,7 @@ import {
   ImageBackground,
   KeyboardAvoidingView,
   ScrollView,
-  View
+  View,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import PTRView from 'react-native-pull-to-refresh';
@@ -20,7 +20,7 @@ const EnhancedView = ({
   children,
   isLoading,
   onRefresh,
-  keyboardVerticalOffset
+  keyboardVerticalOffset,
 }) => {
   const component = (
     <ImageBackground
@@ -33,7 +33,7 @@ const EnhancedView = ({
       }
     >
       <KeyboardAvoidingView
-        behavior="padding"
+        behavior='padding'
         keyboardVerticalOffset={keyboardVerticalOffset}
       >
         <ScrollView
@@ -76,7 +76,7 @@ EnhancedView.defaultProps = {
 
   children: null,
 
-  keyboardVerticalOffset: 0
+  keyboardVerticalOffset: 0,
 };
 
 EnhancedView.propTypes = {
@@ -85,7 +85,7 @@ EnhancedView.propTypes = {
   backgroundImageUrl: PropTypes.string,
   backgroundImagePath: PropTypes.oneOfType([
     PropTypes.string,
-    PropTypes.number
+    PropTypes.number,
   ]),
   // the passed prop backgroundImagePath should be in the form: require('../../image.png')
   backgroundImageBlurRadius: PropTypes.number,
@@ -97,10 +97,10 @@ EnhancedView.propTypes = {
 
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
+    PropTypes.node,
   ]),
 
-  keyboardVerticalOffset: PropTypes.number
+  keyboardVerticalOffset: PropTypes.number,
 };
 
 export default EnhancedView;
