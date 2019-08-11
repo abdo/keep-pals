@@ -4,35 +4,37 @@ import React from 'react';
 
 import { colors } from '../assets/styles/base';
 import tabNavigator from './TabNavigator';
+import screens from '../screens';
 
 const RootStack = createStackNavigator(
   {
-    Tab: tabNavigator
+    Tab: tabNavigator,
+    Friend: screens.FriendScreen,
   },
   {
     initialRouteName: 'Tab',
 
     defaultNavigationOptions: ({ navigation }) => {
-      //--first, we check which screen it is:
-      let screen = navigation.state.routeName;
+      // --first, we check which screen it is:
+      const screen = navigation.state.routeName;
 
-      //values we will modify then return:
+      // values we will modify then return:
       let headerTitle = '';
       let headerRight = '';
-      let headerLeft = '';
+      const headerLeft = '';
       let headerStyle = {
-        backgroundColor: colors.primary
+        backgroundColor: colors.primary,
       };
-      let headerTitleStyle = {
-        color: colors.white
+      const headerTitleStyle = {
+        color: colors.white,
       };
-      let tabBarVisible = true;
-      //and so on...
+      const tabBarVisible = true;
+      // and so on...
 
-      //For each screen:
+      // For each screen:
       if (screen === 'Tab') {
         const { routes, index } = navigation.state;
-        let tabScreen = routes[index].routeName;
+        const tabScreen = routes[index].routeName;
 
         if (tabScreen === 'tabScreen1') {
           headerTitle = 'Reminders';
@@ -43,7 +45,7 @@ const RootStack = createStackNavigator(
             />
           );
           headerStyle = {
-            backgroundColor: colors.primary
+            backgroundColor: colors.primary,
           };
         }
 
@@ -56,7 +58,7 @@ const RootStack = createStackNavigator(
             />
           );
           headerStyle = {
-            backgroundColor: colors.primary
+            backgroundColor: colors.primary,
           };
         }
 
@@ -67,7 +69,7 @@ const RootStack = createStackNavigator(
           headerTitle,
           headerRight,
           headerLeft,
-          headerTitleStyle
+          headerTitleStyle,
           // and so on..
         };
       }
@@ -76,10 +78,10 @@ const RootStack = createStackNavigator(
       return {
         headerRight,
         headerStyle,
-        headerTitleStyle
+        headerTitleStyle,
       };
-    }
-  }
+    },
+  },
 );
 
 export default createAppContainer(RootStack);

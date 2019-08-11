@@ -8,26 +8,26 @@ import RemindersScreen from '../screens/RemindersScreen';
 
 export default createMaterialTopTabNavigator(
   {
-    //--specific navigationOptions for each tab
+    // --specific navigationOptions for each tab
     tabScreen1: {
       screen: RemindersScreen,
       navigationOptions: {
         tabBarLabel: 'Reminders',
-        tabBarIcon: ({ tintColor }) => <Text style={{ fontSize: 20 }}>🔔</Text>
-      }
+        tabBarIcon: ({ tintColor }) => <Text style={{ fontSize: 20 }}>🔔</Text>,
+      },
     },
     tabScreen2: {
       screen: FriendsScreen,
       navigationOptions: {
         tabBarLabel: 'Friends',
-        tabBarIcon: ({ tintColor }) => <Text style={{ fontSize: 20 }}>❤️</Text>
-      }
-    }
+        tabBarIcon: ({ tintColor }) => <Text style={{ fontSize: 20 }}>❤️</Text>,
+      },
+    },
   },
   {
     // Config
 
-    initialRouteName: 'tabScreen1',
+    initialRouteName: 'tabScreen2',
     order: ['tabScreen1', 'tabScreen2'],
     tabBarPosition: 'bottom',
     swipeEnabled: true,
@@ -44,15 +44,15 @@ export default createMaterialTopTabNavigator(
         backgroundColor: colors.primary,
         height: sizes.bottomTabHeight,
         borderTopWidth: 0.5,
-        borderTopColor: '#00000000'
+        borderTopColor: '#00000000',
       },
       labelStyle: {
-        fontSize: 18
+        fontSize: 18,
       },
       iconStyle: {},
       indicatorStyle: {
-        backgroundColor: colors.secondary
-      }
-    }
-  }
+        backgroundColor: colors.secondary,
+      },
+    },
+  },
 );

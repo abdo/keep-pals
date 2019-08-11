@@ -5,7 +5,7 @@ import Color from 'color';
 
 export const dimensions = {
   fullHeight: Dimensions.get('window').height,
-  fullWidth: Dimensions.get('window').width
+  fullWidth: Dimensions.get('window').width,
 };
 
 Dimensions.addEventListener('change', (dims) => {
@@ -16,7 +16,7 @@ Dimensions.addEventListener('change', (dims) => {
 export const sizes = {
   bottomTabHeight: 55,
   mainContentWidth: '90%',
-  mainContentWidthWithoutPercent: 90
+  mainContentWidthWithoutPercent: 90,
 };
 
 // GAPS
@@ -30,7 +30,7 @@ export const gaps = {
   xl: 40,
   xxl: 50,
   xxxl: 80,
-  filler: 120
+  filler: 120,
 };
 
 // FONT SIZES
@@ -43,16 +43,16 @@ export const fontSizes = {
   md: 18,
   lg: 28,
   xlg: 40,
-  huge: 50
+  huge: 50,
 };
 
 // FONT TYPES
 
-// export const fontTypes = {
-//   main: 'montserratMedium',
-//   mainBold: 'montserratBold',
-//   logoFont: 'montserratLight'
-// };
+export const fontTypes = {
+  main: 'LexendDeca',
+  // mainBold: 'montserratBold',
+  // logoFont: 'montserratLight'
+};
 
 // COLORS
 
@@ -80,5 +80,5 @@ export const colors = {
   disclaimer,
   facebook,
   gray01,
-  transparent
+  transparent,
 };

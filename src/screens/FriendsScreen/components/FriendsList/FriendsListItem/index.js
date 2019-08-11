@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   ListItem,
   Thumbnail,
@@ -9,9 +10,15 @@ import {
   Button,
 } from 'native-base';
 import PropTypes from 'prop-types';
-import { defaultFriendPictureLink } from '../../../../assets/constants/general';
+import { defaultFriendPictureLink } from '../../../../../assets/constants/general';
 
-const FriendsListItem = ({ name, description, location, pictureLink }) => {
+const FriendsListItem = ({
+  name,
+  description,
+  location,
+  pictureLink,
+  onPress,
+}) => {
   return (
     <ListItem thumbnail>
       <Left>
@@ -35,7 +42,7 @@ const FriendsListItem = ({ name, description, location, pictureLink }) => {
         ) : null}
       </Body>
       <Right>
-        <Button transparent>
+        <Button transparent onPress={onPress}>
           <Text>View</Text>
         </Button>
       </Right>
@@ -47,6 +54,7 @@ FriendsListItem.defaultProps = {
   description: '',
   location: '',
   pictureLink: defaultFriendPictureLink,
+  onPress: () => null,
 };
 
 FriendsListItem.propTypes = {
@@ -54,6 +62,7 @@ FriendsListItem.propTypes = {
   description: PropTypes.string,
   location: PropTypes.string,
   pictureLink: PropTypes.string,
+  onPress: PropTypes.func,
 };
 
 export default FriendsListItem;
