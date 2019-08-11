@@ -1,5 +1,5 @@
 import { Image } from 'react-native';
-import { Text, Button, Icon, Card } from 'native-base';
+import { Text, Button, Icon, Card, View } from 'native-base';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -7,6 +7,7 @@ import { defaultFriendPictureLink } from '../../../../assets/constants/general';
 import { sizes, colors, fontTypes } from '../../../../assets/styles/base';
 import EnhancedView from '../../../../components/common/EnhancedView';
 import FriendTabs from './components/Tabs';
+import QuickModal from '../../../../components/common/QuickModal';
 
 const pale_background = require('../../../../assets/images/pale_background.jpg');
 
@@ -120,6 +121,25 @@ const FriendScreen = ({ navigation }) => {
           {friend.description}
         </Text>
       </Card>
+      <View style={{ flexDirection: 'row', marginTop: 20 }}>
+        <Button success rounded small style={{ margin: 5 }}>
+          <Text uppercase={false}>Add Story</Text>
+        </Button>
+        <Button
+          light
+          rounded
+          small
+          style={{ margin: 5 }}
+          onPress={() =>
+            QuickModal(
+              'Your friend will be archived, you won\'t be notified about this friend anymore, are you sure?',
+              () => {},
+            )
+          }
+        >
+          <Text uppercase={false}>Archive</Text>
+        </Button>
+      </View>
       <FriendTabs reminders={reminders} stories={stories} />
     </EnhancedView>
   );
