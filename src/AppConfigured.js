@@ -4,9 +4,11 @@ import React, { useState, useEffect } from 'react';
 
 import { loadFonts } from './assets/styles/fonts/loadFonts';
 import EnhancedView from './components/common/EnhancedView';
+import MainNavigator from './routes/MainNavigator';
 
 // This is the main app, with these configured:
 // 1- Native Base
+// 2- Enhanced View main container
 
 const AppConfigured = () => {
   const [fontLoaded, setFontLoaded] = useState(false);
@@ -28,7 +30,7 @@ const AppConfigured = () => {
   return (
     <Root>
       <EnhancedView isLoading={!fontLoaded}>
-        <Text>Open up App.js to start working on your app!</Text>
+        <MainNavigator />
       </EnhancedView>
     </Root>
   );

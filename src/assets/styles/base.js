@@ -14,8 +14,7 @@ Dimensions.addEventListener('change', (dims) => {
 });
 
 export const sizes = {
-  bottomTabHeight: 70,
-  bottomTabHeight: 65,
+  bottomTabHeight: 55,
   mainContentWidth: '90%',
   mainContentWidthWithoutPercent: 90
 };
@@ -57,8 +56,8 @@ export const fontSizes = {
 
 // COLORS
 
-const primaryColor = Color('#90afc5');
-const secondaryColor = Color('#336b87');
+const primaryColor = Color('#336b87');
+const secondaryColor = Color('#90afc5');
 const tertiaryColor = Color('#763626');
 const black = Color('#2a3132');
 const white = Color('#EAEEFF');
