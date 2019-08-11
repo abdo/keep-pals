@@ -1,7 +1,7 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
-import { Text } from 'react-native';
 import React from 'react';
 
+import { Icon, Button } from 'native-base';
 import { colors } from '../assets/styles/base';
 import tabNavigator from './TabNavigator';
 import screens from '../screens';
@@ -10,6 +10,7 @@ const RootStack = createStackNavigator(
   {
     Tab: tabNavigator,
     Friend: screens.FriendScreen,
+    AddFriend: screens.AddFriendScreen,
   },
   {
     initialRouteName: 'Tab',
@@ -39,11 +40,6 @@ const RootStack = createStackNavigator(
         if (tabScreen === 'tabScreen1') {
           headerTitle = 'Reminders';
 
-          headerRight = (
-            <Text
-              style={{ marginRight: 20, fontSize: 20, color: colors.secondary }}
-            />
-          );
           headerStyle = {
             backgroundColor: colors.primary,
           };
@@ -53,10 +49,14 @@ const RootStack = createStackNavigator(
           headerTitle = 'Friends';
 
           headerRight = (
-            <Text
-              style={{ marginRight: 20, fontSize: 20, color: colors.secondary }}
-            />
+            <Button
+              style={{ marginRight: 10 }}
+              onPress={() => navigation.navigate('AddFriend')}
+            >
+              <Icon type='AntDesign' name='pluscircle' />
+            </Button>
           );
+
           headerStyle = {
             backgroundColor: colors.primary,
           };
