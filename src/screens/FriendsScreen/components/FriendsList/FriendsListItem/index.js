@@ -11,6 +11,7 @@ import {
 } from 'native-base';
 import PropTypes from 'prop-types';
 import { defaultFriendPictureLink } from '../../../../../assets/constants/general';
+import { fontTypes } from '../../../../../assets/styles/base';
 
 const FriendsListItem = ({
   name,
@@ -29,7 +30,7 @@ const FriendsListItem = ({
         />
       </Left>
       <Body>
-        <Text>{name}</Text>
+        <Text style={{ fontFamily: fontTypes.main }}>{name}</Text>
         {description ? (
           <Text note numberOfLines={1}>
             {description}

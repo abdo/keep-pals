@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const Schema = mongoose.Schema;
+const { Schema } = mongoose;
 
 // Reminders model
 const RemindersSchema = new Schema({
@@ -12,10 +12,10 @@ const RemindersSchema = new Schema({
       body: String,
       date: {
         type: Date,
-        default: Date.now
-      }
-    }
-  ]
+        default: Date.now,
+      },
+    },
+  ],
 });
 
 module.exports = Reminders = mongoose.model('reminders', RemindersSchema);

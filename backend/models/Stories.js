@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const Schema = mongoose.Schema;
+const { Schema } = mongoose;
 
 // Stories model
 const StoriesSchema = new Schema({
@@ -11,10 +11,10 @@ const StoriesSchema = new Schema({
       body: String,
       date: {
         type: Date,
-        default: Date.now
-      }
-    }
-  ]
+        default: Date.now,
+      },
+    },
+  ],
 });
 
 module.exports = Stories = mongoose.model('stories', StoriesSchema);

@@ -3,13 +3,13 @@ module.exports = {
   env: {
     browser: true,
     jest: true,
-    'react-native/react-native': true
+    'react-native/react-native': true,
   },
   plugins: ['react-native'],
   parser: 'babel-eslint',
   parserOptions: {
     sourceType: 'module',
-    allowImportExportEverywhere: false
+    allowImportExportEverywhere: false,
   },
   rules: {
     quotes: ['error', 'single'],
@@ -28,8 +28,8 @@ module.exports = {
         allow: ['_id'],
         allowAfterThis: false,
         allowAfterSuper: false,
-        enforceInMethodNames: true
-      }
+        enforceInMethodNames: true,
+      },
     ],
     radix: 'off',
     'comma-dangle': 2,
@@ -42,6 +42,6 @@ module.exports = {
     'react-native/no-inline-styles': 'off',
     'react-native/no-color-literals': 2,
     'react-native/no-raw-text': 'off',
-    'react-native/sort-styles': 1
-  }
+    'react-native/sort-styles': 1,
+  },
 };

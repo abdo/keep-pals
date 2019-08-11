@@ -4,10 +4,87 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import { defaultFriendPictureLink } from '../../../../assets/constants/general';
-import EnhancedView from '../../../../components/common/EnhancedView';
 import { sizes, colors, fontTypes } from '../../../../assets/styles/base';
+import EnhancedView from '../../../../components/common/EnhancedView';
+import FriendTabs from './components/Tabs';
 
 const pale_background = require('../../../../assets/images/pale_background.jpg');
+
+const reminders = [
+  {
+    date: '1-10-2020',
+    title: 'You gotta contact marwa',
+    body: 'Marwa is the one you need to contact',
+  },
+  {
+    date: '1-10-2020',
+    title: 'You gotta contact marwa',
+    body: 'Marwa is the one you need to contact',
+  },
+  {
+    date: '1-10-2020',
+    title: 'You gotta contact marwa',
+    body: 'Marwa is the one you need to contact',
+  },
+  {
+    date: '1-10-2020',
+    title: 'You gotta contact marwa',
+    body: 'Marwa is the one you need to contact',
+  },
+  {
+    date: '1-10-2020',
+    title: 'You gotta contact marwa',
+    body: 'Marwa is the one you need to contact',
+  },
+  {
+    date: '1-10-2020',
+    title: 'You gotta contact marwa',
+    body: 'Marwa is the one you need to contact',
+  },
+  {
+    date: '1-10-2020',
+    title: 'You gotta contact marwa',
+    body: 'Marwa is the one you need to contact',
+  },
+  {
+    date: '1-10-2020',
+    title: 'You gotta contact marwa',
+    body: 'Marwa is the one you need to contact',
+  },
+];
+
+const stories = [
+  {
+    date: '3-12-2021',
+    body:
+      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates saepe nesciunt impedit eum vel quae omnis, rerum laboriosam vitae. Voluptatum officiis dolor incidunt rem voluptates eius, quos aliquam consectetur saepe.',
+  },
+  {
+    date: '3-12-2021',
+    body:
+      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates saepe nesciunt impedit eum vel quae omnis, rerum laboriosam vitae. Voluptatum officiis dolor incidunt rem voluptates eius, quos aliquam consectetur saepe.',
+  },
+  {
+    date: '3-12-2021',
+    body:
+      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates saepe nesciunt impedit eum vel quae omnis, rerum laboriosam vitae. Voluptatum officiis dolor incidunt rem voluptates eius, quos aliquam consectetur saepe.',
+  },
+  {
+    date: '3-12-2021',
+    body:
+      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates saepe nesciunt impedit eum vel quae omnis, rerum laboriosam vitae. Voluptatum officiis dolor incidunt rem voluptates eius, quos aliquam consectetur saepe.',
+  },
+  {
+    date: '3-12-2021',
+    body:
+      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates saepe nesciunt impedit eum vel quae omnis, rerum laboriosam vitae. Voluptatum officiis dolor incidunt rem voluptates eius, quos aliquam consectetur saepe.',
+  },
+  {
+    date: '3-12-2021',
+    body:
+      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates saepe nesciunt impedit eum vel quae omnis, rerum laboriosam vitae. Voluptatum officiis dolor incidunt rem voluptates eius, quos aliquam consectetur saepe.',
+  },
+];
 
 const FriendScreen = ({ navigation }) => {
   const friend = navigation.getParam('friend', {});
@@ -18,7 +95,7 @@ const FriendScreen = ({ navigation }) => {
       backgroundImageBlurRadius={1}
       style={{ alignItems: 'center', marginTop: 20 }}
     >
-      <Text style={{ fontWeight: 'bold' }}>{friend.name}</Text>
+      <Text style={{ fontFamily: fontTypes.main }}>{friend.name}</Text>
       <Image
         source={{ uri: friend.pictureLink || defaultFriendPictureLink }}
         style={{ width: 200, height: 200, marginTop: 20, borderRadius: 20 }}
@@ -43,6 +120,7 @@ const FriendScreen = ({ navigation }) => {
           {friend.description}
         </Text>
       </Card>
+      <FriendTabs reminders={reminders} stories={stories} />
     </EnhancedView>
   );
 };
