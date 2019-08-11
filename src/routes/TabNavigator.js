@@ -27,7 +27,7 @@ export default createMaterialTopTabNavigator(
   {
     // Config
 
-    initialRouteName: 'tabScreen2',
+    initialRouteName: 'tabScreen1',
     order: ['tabScreen1', 'tabScreen2'],
     tabBarPosition: 'bottom',
     swipeEnabled: true,

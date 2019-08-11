@@ -30,7 +30,6 @@ const uploadImage = (avatar, folder = 'general', identifier = 'example') => {
   return new Promise((resolve, reject) => {
     RNS3.put(file, options)
       .then((response) => {
-        console.log(response);
         if (response.status !== 201) reject('Failed to upload image to S3');
         else {
           resolve(response.body.postResponse.location);

@@ -125,6 +125,10 @@ const FriendScreen = ({ navigation }) => {
   );
 };
 
+FriendScreen.navigationOptions = ({ navigation }) => ({
+  title: navigation.getParam('friend').name,
+});
+
 FriendScreen.defaultProps = {
   navigation: {},
 };

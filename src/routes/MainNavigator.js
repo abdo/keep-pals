@@ -1,16 +1,17 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { Icon, Button } from 'native-base';
 import React from 'react';
 
-import { Icon, Button } from 'native-base';
 import { colors } from '../assets/styles/base';
-import tabNavigator from './TabNavigator';
 import screens from '../screens';
+import tabNavigator from './TabNavigator';
 
 const RootStack = createStackNavigator(
   {
     Tab: tabNavigator,
     Friend: screens.FriendScreen,
     AddFriend: screens.AddFriendScreen,
+    ArchivedFriends: screens.ArchivedFriendsScreen,
   },
   {
     initialRouteName: 'Tab',
