@@ -6,6 +6,7 @@ import RemindersScreen from './RemindersScreen';
 import FriendScreen from './FriendsScreen/screens/FriendScreen';
 import AddFriendScreen from './FriendsScreen/screens/AddFriendScreen';
 import ArchivedFriendsScreen from './FriendsScreen/screens/ArchivedFriendsScreen';
+import AddStoryScreen from './FriendsScreen/screens/FriendScreen/screens/AddStoryScreen';
 
 const screens = {
   RemindersScreen,
@@ -13,6 +14,7 @@ const screens = {
   FriendScreen,
   AddFriendScreen,
   ArchivedFriendsScreen,
+  AddStoryScreen,
 };
 
 export default screens;

@@ -12,6 +12,7 @@ const RootStack = createStackNavigator(
     Friend: screens.FriendScreen,
     AddFriend: screens.AddFriendScreen,
     ArchivedFriends: screens.ArchivedFriendsScreen,
+    AddStory: screens.AddStoryScreen,
   },
   {
     initialRouteName: 'Tab',

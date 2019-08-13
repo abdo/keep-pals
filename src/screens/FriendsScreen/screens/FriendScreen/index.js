@@ -122,7 +122,17 @@ const FriendScreen = ({ navigation }) => {
         </Text>
       </Card>
       <View style={{ flexDirection: 'row', marginTop: 20 }}>
-        <Button success rounded small style={{ margin: 5 }}>
+        <Button
+          success
+          rounded
+          small
+          style={{ margin: 5 }}
+          onPress={() =>
+            navigation.navigate('AddStory', {
+              friendName: friend.name,
+            })
+          }
+        >
           <Text uppercase={false}>Add Story</Text>
         </Button>
         <Button
@@ -154,7 +164,11 @@ FriendScreen.defaultProps = {
 };
 
 FriendScreen.propTypes = {
-  navigation: PropTypes.shape({ getParam: PropTypes.func }),
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func,
+    getParam: PropTypes.func,
+    goBack: PropTypes.func,
+  }),
 };
 
 export default FriendScreen;

@@ -52,7 +52,7 @@ const AddFriendScreen = () => {
     <EnhancedView
       backgroundImageBlurRadius={1.4}
       keyboardVerticalOffset={-200}
-      backgroundImageUrl='https://images.unsplash.com/photo-1495001258031-d1b407bc1776?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80'
+      backgroundImageUrl='https://images.unsplash.com/photo-1475483768296-6163e08872a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'
     >
       <MainTextInput
         iconType='Entypo'

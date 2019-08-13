@@ -12,6 +12,8 @@ const MainTextarea = ({
   labelColor,
   name,
   onChange,
+  maxLength,
+  height,
 }) => {
   const onChangeText = (value) => {
     onChange(name, value);
@@ -31,7 +33,7 @@ const MainTextarea = ({
       <Textarea
         containerStyle={{
           width: '100%',
-          height: 180,
+          height,
           backgroundColor: colors.trueWhite,
           padding: 5,
           marginVertical: 5,
@@ -39,10 +41,14 @@ const MainTextarea = ({
           borderWidth: 2,
           borderRadius: 5,
         }}
-        style={{ textAlignVertical: 'top', height: 170, color: colors.black }}
+        style={{
+          textAlignVertical: 'top',
+          height: height - 10,
+          color: colors.black,
+        }}
         onChangeText={onChangeText}
         defaultValue={initialValue}
-        maxLength={200}
+        maxLength={maxLength}
         placeholder={placeholder}
         underlineColorAndroid='transparent'
       />
@@ -57,6 +63,8 @@ MainTextarea.defaultProps = {
   label: '',
   labelColor: colors.black,
   initialValue: '',
+  maxLength: 1000,
+  height: 180,
 };
 
 MainTextarea.propTypes = {
@@ -66,6 +74,8 @@ MainTextarea.propTypes = {
   label: PropTypes.string,
   labelColor: PropTypes.oneOfType([PropTypes.string, PropTypes.shape({})]),
   initialValue: PropTypes.string,
+  maxLength: PropTypes.number,
+  height: PropTypes.number,
 };
 
 export default MainTextarea;
