@@ -1,6 +1,6 @@
 import { RNS3 } from 'react-native-aws3';
 
-import keys from '../secretkeys/keys.ignore';
+import keys from '../keys/keys.ignore';
 
 // This article explains the way I use to upload images:
 // https://reactnative.sataiva.com/reactnative-intro/reactnative-expo-upload-image-in-amazons3/

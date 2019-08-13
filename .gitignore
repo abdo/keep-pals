@@ -11,3 +11,5 @@ web-build/
 web-report/
 
 *.ignore.*
+
+backend/node_modules/**/*
