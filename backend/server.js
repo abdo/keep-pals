@@ -1,6 +1,5 @@
 const bodyParser = require('body-parser');
 const express = require('express');
-const passport = require('passport');
 const cors = require('cors');
 
 const app = express();
@@ -12,23 +11,22 @@ require('./models/loadModels');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+// Cors Middleware
+app.use(cors());
+
 // DB Connect
 require('./config/dbconnect');
 
 // Mongoose Config
 require('./config/mongoose');
 
-// Passport Config
-// app.use(passport.initialize());
-// require('./config/passport')(passport);
-
-// Cors Middleware
-app.use(cors());
+// Each request config
+app.use(require('./config/forEachRequest.js'));
 
 // Routes
 app.use('/info', (req, res) => res.send('Keep Pals App API'));
-// app.use('/api/user', require('./routes/user'));
-// app.use('/api/dc', require('./routes/dc'));
+app.use('/api/user', require('./routes/user'));
+app.use('/api/friend', require('./routes/friend'));
 
 const port = process.env.PORT || 4920;
 
